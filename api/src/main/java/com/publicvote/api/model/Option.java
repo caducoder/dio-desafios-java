@@ -11,11 +11,43 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "options")
-@Getter @Setter @NoArgsConstructor
 public class Option {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
-	private Long votes;
+	private Long votes = 0L;
+	
+	public Option() {
+	}
+	
+	public Option(String title) {
+		this.title = title;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public Long getVotes() {
+		return votes;
+	}
+
+	public void setVotes(Long votes) {
+		this.votes = votes;
+	}
+	
+	
 }
